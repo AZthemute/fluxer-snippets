@@ -3,7 +3,8 @@ Welcome! This repo contains a collection CSS snippets for [Fluxer](https://githu
 
 # List of snippets
 - [dm-fav-icons](./snippets/dm-fav-icons.css) <sub>*by @carlfully*</sub> : lets you customise the DMs/Main page and Favourite buttons
-  <img src="./repo-assets/dm-fav-icon.webp" alt="displaying the snippet visually" />
+
+  <img src="./repo-assets/dm-fav-icons.webp" alt="displaying the snippet visually" height="200px"/>
 
 
 # How to apply
