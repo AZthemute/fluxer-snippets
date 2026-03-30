@@ -1,0 +1,122 @@
+/* ---------------------------------------------------------------- */
+/* horizontal serverlist by deer
+/* intended to be used on desktop as it relies on transforms
+/* to allow you to scroll horizontally with your mousewheel.
+/* ---------------------------------------------------------------- */
+
+body {
+	container-name: body;
+	
+	/* Controls the server list alignment. Options: left | center | right */
+	--Serverlist-Alignment: left;
+}
+
+
+/* setting property setup */
+@property --Serverlist-Alignment {
+	syntax: 'left | center | right';
+	inherits: false;
+	initial-value: left;
+}
+
+
+/* only show on desktop */
+@media (min-width: 640px) {
+	:root {
+		--layout-guild-list-width: 4.0rem; /* more compact */
+		--layout-sidebar-width: calc(16.875rem + var(--layout-guild-list-width)); /* make sidebar wider to compensate for extra space */
+	}
+
+	/* container for server list & rest */
+	[class*="GuildsLayout.module__guildsLayoutContainer_"] {
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* make channel list etc wider to match user area */
+	[class*="GuildsLayout.module__userAreaWrapper_"] {
+		width: var(--layout-sidebar-width);
+	}
+
+	/* scroller wrapper */
+	[class*="GuildsLayout.module__guildListScrollerWrapper_"] {
+		height: var(--layout-guild-list-width);
+		width: 100%;
+
+		overflow: hidden;
+	}
+
+	/* rotate scroller */
+	[class*="GuildsLayout.module__guildListScrollContainer_"] {
+		padding: var(--spacing-2) 0px;
+		width: var(--layout-guild-list-width);
+		height: 100vw;
+
+		transform: rotateZ(-90deg);
+	}
+
+	/* scroller child container*/
+	[class*="GuildsLayout.module__guildListScrollContainer_"] [class*="Scroller.module__scrollerChildren_"] {
+		align-items: flex-end;
+	}
+
+	/* serverlist section container */
+	[class*="GuildsLayout.module__guildListContent_"] {
+		align-items: flex-end;
+		width: var(--layout-guild-list-width);
+	}
+
+	/* serverlist top & lower section */
+	[class*="GuildsLayout.module__guildListTopSection_"],
+	[class*="GuildsLayout.module__guildListGuildsSection_"] {
+		width: unset;
+	}
+
+	/* unrotate server button & misc buttons */
+	[class*="GuildsLayout.module__guildListItem_"],
+	[class*="GuildFolderItem.module__folderHeader_"] {
+		width: 3.7rem; 
+		transform: rotateZ(-180deg);
+	}
+	/* unrotate server image & extra buttons */
+	[class*="GuildListDMItem.module__relative_"],
+	[class*="GuildsLayout.module__relative_"],
+	[class*="GuildFolderItem.module__relative_"],
+	[class*="GuildsLayout.module__addGuildButtonIcon_"],
+	[class*="GuildsLayout.module__unavailableBadge_"]
+	{
+		transform: rotateZ(-90deg);
+	} 
+
+
+	/* ---------------------------------------------------------------- */
+	/* settings
+	/* ---------------------------------------------------------------- */
+	
+	
+	@container body style(--Serverlist-Alignment: left) {
+		[class*="GuildsLayout.module__guildListScrollContainer_"] [class*="Scroller.module__scrollerChildren_"] {
+			justify-content: start;
+		}
+	}
+	
+	@container body style(--Serverlist-Alignment: center) {
+		[class*="GuildsLayout.module__guildListScrollContainer_"] [class*="Scroller.module__scrollerChildren_"] {
+			justify-content: center;
+		}
+	}
+	
+	@container body style(--Serverlist-Alignment: right) {
+
+		/* reverse server list */
+		[class*="GuildsLayout.module__guildListContent_"],
+		[class*="GuildsLayout.module__guildListTopSection_"], 
+		[class*="GuildsLayout.module__guildListGuildsSection_"] {
+			flex-direction: column-reverse;
+		}
+		
+		[class*="GuildsLayout.module__guildListScrollContainer_"] [class*="Scroller.module__scrollerChildren_"] {
+			justify-content: end;
+		}
+	}
+}
