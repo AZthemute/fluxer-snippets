@@ -1,0 +1,52 @@
+/* CUSTOM PROPERTIES
+  Sakura Icon:  https://fluxerusercontent.com/attachments/1477709349373092478/1482137121508758874/sakura-fluxer.svg
+  Wave Icon:    https://fluxerusercontent.com/attachments/1477709349373092478/1481779513868649384/wave-fluxer.svg
+  Torii: https://fluxerusercontent.com/attachments/1477709349373092478/1482377565502280261/image.png
+*/
+
+/* THE CLASSES
+  Background for BOTH DM and Favourite buttons: [class*="GuildsLayout.module__fluxerButtonIcon___XzkwZG GuildsLayout.module__guildIcon___XzkwZG"]
+  The Fluxer icon: [aria-label="Fluxer application symbol"]
+  The Favourite icon: [class="GuildsLayout.module__favoritesIcon___XzkwZG"]
+  Buttons' hitbox: [class*="GuildsLayout.module__guildListItem_"]
+
+*/
+
+/* BUTTON BACKGROUND */
+[class*="GuildsLayout.module__fluxerButtonIcon___XzkwZG GuildsLayout.module__guildIcon___XzkwZG"] {
+  background: url("https://fluxerusercontent.com/attachments/1477709349373092478/1482137121508758874/sakura-fluxer.svg") no-repeat;
+  background-size: contain;
+}
+
+/* COLOR THE ICONS */
+[aria-label="Fluxer application symbol"], [class="GuildsLayout.module__favoritesIcon___XzkwZG"] {
+  color: #fff;
+}
+
+/* STAR SPIN */
+[class="GuildsLayout.module__favoritesIcon___XzkwZG"] {
+  transition: transform 0.5s;
+}
+
+[class*="GuildsLayout.module__guildListItem_"]:hover [class="GuildsLayout.module__favoritesIcon___XzkwZG"] {
+  transform: rotate(216deg);
+}
+
+/* HIDE FLUXER ICON */
+[aria-label="Fluxer application symbol"] > path {
+  display: none;
+}
+
+/* FLUXER ICON ZOOM IN*/
+[aria-label="Fluxer application symbol"] {
+  background: url("https://fluxerusercontent.com/attachments/1477709349373092478/1482377565502280261/image.png") no-repeat; /*remove if you want default*/
+  background-size: contain;
+  transform-origin: 50% 100%;
+  transition: transform 0.1s, filter .5s ease-in-out;
+}
+
+[class*="GuildsLayout.module__guildListItem_"]:hover [aria-label="Fluxer application symbol"] {
+  transform: scale(1.1);
+}
+
+/* by @carlfully#8638 on github:carlfully/fluxer-snippets */
