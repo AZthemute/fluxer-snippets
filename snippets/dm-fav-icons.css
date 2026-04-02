@@ -5,7 +5,7 @@
 */
 
 /* THE CLASSES
-  Background for BOTH DM and Favourite buttons: [class*="GuildsLayout.module__fluxerButtonIcon GuildsLayout.module__guildIcon"]
+  Background for BOTH DM and Favourite buttons: [class*="GuildsLayout.module__fluxerButtonIcon"], [class*="GuildsLayout.module__guildIcon"]
   The Fluxer icon: [aria-label="Fluxer application symbol"]
   The Favourite icon: [class="GuildsLayout.module__favoritesIcon"]
   Buttons' hitbox: [class*="GuildsLayout.module__guildListItem_"]
