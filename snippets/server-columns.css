@@ -1,0 +1,32 @@
+/* server-columns by carlfully*/
+:root {
+        --columns: 2; /* please just use numbers like 2, 3, 4, 5 and such, I don't want to code weird cases :< */
+    }
+
+/*width of the server list*/
+    [class="GuildsLayout.module__guildListContent___XzkwZG"], [class="GuildsLayout.module__guildListScrollerWrapper___XzkwZG"] {
+        width: calc(70px + (var(--columns) - 1) * 50px);
+    }
+    
+/*move away the channel list*/
+    [class="GuildsLayout.module__contentContainer___XzkwZG"] {
+        padding-left: calc( (var(--columns) - 1) * 50px);
+    }
+
+/*favoutites and DM icons always have 2 columns...*/
+    [class="GuildsLayout.module__guildListTopSection___XzkwZG"] {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+/*...while servers and extra buttons vary based on user input!*/
+    [class="GuildsLayout.module__guildListGuildsSection___XzkwZG"], [class="GuildsLayout.module__guildListItems___XzkwZG"] {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    }
+
+/*this makes the serverlist properly work, it's a long, 5 hours trial-and-error story*/
+    [class="GuildsLayout.module__guildListItems___XzkwZG"] {
+    grid-column-start: 1;
+    grid-column-end: span var(--columns);
+    }
