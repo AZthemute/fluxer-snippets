@@ -14,7 +14,7 @@
 	--ThemeBackgroundSize: cover;
 	/* if you want the image to repeat */
 	--ThemeBackgroundRepeat: no-repeat;
-	/* Set to 0 to remove blur. i recommend leaving this off and tweaking --ThemePanelBlur instead */
+	/* Set to 0 to remove blur */
 	--ThemeBackgroundBlur: 10px;
 	/* BG image opacity. 0 is fully transparent, 1 is fully opaque */
 	--ThemeBackgroundOpacity: 0.3;
