@@ -2,6 +2,9 @@
 Welcome! This repo contains a collection CSS snippets for [Fluxer](https://github.com/fluxerapp/fluxer), a FOSS Discord alternative.
 
 # List of snippets
+- [transparent theme template](./snippets/transparent-theme-template.css) <sub>*by @deeruwu*</sub> : simple, customizable theme template with a background image 
+  
+  <img src="./repo-assets/preview-transparent-theme-template.png" alt="displaying the snippet visually"/>
 - [colorful-titlebar-buttons](./snippets/colorful-titlebar-buttons.css) <sub>*by @deeruwu*</sub> : modifies the titlebar buttons to be more colorful and have style
   
   <img src="./repo-assets/preview-colorful-titlebar-buttons.gif" alt="displaying the snippet visually"/>
